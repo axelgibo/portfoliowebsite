@@ -30,7 +30,7 @@ html {
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;
-    background-color: #000; /* Set background color to black */
+    background-color: #111; /* Set background color to black */
     background: linear-gradient(to bottom, #000000 75%, #001f3f);
     color: var(--text-color); /* Use the white text color variable */
     line-height: 1.6;
@@ -85,51 +85,28 @@ html {
   }
   
   /* Shared button styles for <button> and <a class="button"> */
+  .button,
   button {
-    border: none;
-    display: inline-block;
-    font-family: inherit;
-    font-size: inherit;
-    background-color: #357b70;
-    color: white;
-    text-decoration: none;
-    padding: 10px; /* Using variable */
-    border-radius: 5px; /* Using variable */
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    -webkit-transition: opacity 0.4s, -webkit-transform 0.3s ease;
-    transition: opacity 0.4s, -webkit-transform 0.3s ease;
-    -o-transition: opacity 0.4s, transform 0.3s ease;
-    transition: opacity 0.4s, transform 0.3s ease;
-    transition: opacity 0.4s, transform 0.3s ease, -webkit-transform 0.3s ease;
-  }
-  a.button {
-    border: none;
-    display: inline-block;
-    font-family: inherit;
-    font-size: inherit;
-    background-color: #357b70;
-    color: white;
-    text-decoration: none;
-    padding: 10px; /* Using variable */
-    border-radius: 5px; /* Using variable */
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    -webkit-transition: opacity 0.4s, -webkit-transform 0.3s ease;
-    transition: opacity 0.4s, -webkit-transform 0.3s ease;
-    -o-transition: opacity 0.4s, transform 0.3s ease;
-    transition: opacity 0.4s, transform 0.3s ease;
-    transition: opacity 0.4s, transform 0.3s ease, -webkit-transform 0.3s ease;
+      border: none;
+      display: inline-block;
+      font-family: inherit;
+      font-size: inherit;
+      background-color: var(--button-bg);
+      color: white;
+      text-decoration: none;
+      padding: var(--default-padding);
+      border-radius: var(--border-radius-small);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+      transition: opacity 0.4s, transform 0.3s ease;
   }
   
-  /* Hover and focus states for both <button> and <a class="button"> */
+  .button:hover,
+  .button:focus,
   button:hover,
-  button:focus,
-  a.button:hover,
-  a.button:focus {
-    cursor: pointer;
-    opacity: 0.8;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+  button:focus {
+      cursor: pointer;
+      opacity: 0.8;
+      transform: scale(1.1);
   }
   
   /* Outline for accessibility */
@@ -156,18 +133,17 @@ html {
     height: auto;
     min-width: 150px;
     max-width: 280px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 15%;
     transition: opacity 1s;
-  }
-  
-  .profile__portrait:hover {
-    opacity: 0.5; /* 50% opacity on hover */
 }
 
-.profile__portrait:not(:hover) { /* Added to handle the transition back */
-    opacity: 1; /* 100% opacity when not hovered */
+.profile__portrait:hover {
+    opacity: 0.5;
+}
+
+.profile__portrait:not(:hover) {
+    opacity: 1;
 }
 
   .page-footer {
